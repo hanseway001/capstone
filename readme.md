@@ -171,7 +171,7 @@ create a new repo in github
 add the newly create repo as a remote
 
 ```
-git remote add origin https://github.com/hanseawy001/capstone.git
+git remote add origin https://github.com/hanseway001/capstone.git
 ```
 
 push your application:

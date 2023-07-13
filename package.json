@@ -4,7 +4,11 @@
   "description": "Capstone Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd server && npm i && cd ../client && npm i && npm run build",
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": "20.3.0"
   },
   "author": "Wayne and Tegan",
   "license": "ISC"
