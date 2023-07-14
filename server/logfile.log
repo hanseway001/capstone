@@ -1,0 +1,2 @@
+{"level":"info","message":"recieved bob bob@chicken.com"}
+{"level":"http","message":"\u001b[0mPOST /addUser \u001b[32m200\u001b[0m 16.515 ms - 25\u001b[0m"}
