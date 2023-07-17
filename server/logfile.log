@@ -1,2 +1,5 @@
 {"level":"info","message":"recieved bob bob@chicken.com"}
 {"level":"http","message":"\u001b[0mPOST /addUser \u001b[32m200\u001b[0m 16.515 ms - 25\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[32m200\u001b[0m 14.733 ms - 13\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 7.765 ms - 150\u001b[0m"}
