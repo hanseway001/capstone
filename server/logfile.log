@@ -3,3 +3,16 @@
 {"level":"info","message":"home page accesed"}
 {"level":"http","message":"\u001b[0mGET / \u001b[32m200\u001b[0m 14.733 ms - 13\u001b[0m"}
 {"level":"http","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 7.765 ms - 150\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 8.930 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /api \u001b[36m304\u001b[0m 24.509 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /api \u001b[36m304\u001b[0m 2.441 ms - -\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 29.419 ms - -\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 2.512 ms - -\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 2.318 ms - -\u001b[0m"}
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 8.736 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /api/getUsers \u001b[32m200\u001b[0m 235.627 ms - 319\u001b[0m"}
