@@ -1,3 +1,12 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  text-decoration: none;
+  font: inherit;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +14,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #dcdcdc;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,6 +44,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #010101;
+  font-family: "Vina Sans", sans-serif;
+}
+h2, h3, h4, h5, h6{
+  color: #505050;
+  font-family: 'Outfit', sans-serif;
+
 }
 
 button {

@@ -18,7 +18,6 @@ export default function Home() {
         <h4>Pages:</h4>
       
         <Outlet />
-
       </section>
     </div>
   );

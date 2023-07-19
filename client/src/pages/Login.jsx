@@ -10,7 +10,8 @@ export const styles = {
 export default function Login() {
   return (
     <div className="App">
-      <h1>Login</h1>
+      <img src="images/logo.png"  alt="" />
+      <h1>LOGIN</h1>
       <h4>Pages:</h4>
       <Link style={styles.link} to={'/Courses'}>
         Courses
@@ -21,6 +22,12 @@ export default function Login() {
       <Link style={styles.link} to={'/About'}>
         About
       </Link>
+
+      <div>
+        <input id="loginUsername" type="text" placeholder="username"/>
+        <input id="loginPassword" type="text" placeholder="password"/>
+        <input type="submit"/>
+      </div>
     </div>
   );
 }
