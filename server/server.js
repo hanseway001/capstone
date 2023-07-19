@@ -27,6 +27,9 @@ app.use(morgan('dev', {
         }
     }
 }))
+// parse requests of content-type - application/json
+app.use(express.json());
+
 app.use(express.urlencoded({extended:false}))
 
 app.get('/', (req,res) => {
