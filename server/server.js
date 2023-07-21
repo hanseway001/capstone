@@ -7,7 +7,9 @@ const path = require("path");
 const app = express();
 const jwt = require("jsonwebtoken")
 const token = jwt.sign({foo: 'bar'}, 'shhhh')
-const dbConnection = require('./config/database.js');
+const user = require('./models/userModel');
+const passport = require('passport')
+const authRoutes = require('./routes/authRoutes');
 
 //winston for general logging
 const logger = winston.createLogger({
@@ -28,9 +30,18 @@ app.use(morgan('dev', {
     }
 }))
 // parse requests of content-type - application/json
-app.use(express.json());
-
+// Middleware
+app.use(express.json())
+app.use(passport.initialize())
+//Routes
+app.use('/auth', authRoutes)
 app.use(express.urlencoded({extended:false}))
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error' });
+});
 
 app.get('/', (req,res) => {
     logger.info('home page accesed')
@@ -44,6 +55,29 @@ app.post('/addUser', (req,res) => {
     res.send(`hello ${name} ${email}`)
 })
 
+// app.post('/register', (req,res) => {
+//     let name = req.headers.userName
+//     let email = req.body.email
+//     logger.info(`recieved ${name} ${email}`)
+//     res.send(`hello ${name} ${email}`)
+// })
+
+// app.post('/login', (req, res) => {
+//     const {username, password } = req.body;
+//     const user = user.find
+//     // const user = Users.find(currUser =>  currUser.username === username);
+//     if(!user || user.password !== password) {
+//         return res.status(401).json({ errorMessage: 'Invalid Cridentials'})
+//     }
+
+//     const token = jwt.sign({username: user.username}, secret, {
+//         algorithms: ['HS256'],
+//         expiresIn: '10s'
+//     });
+
+//     return res.json({ token: token}); 
+// })
+
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
@@ -52,7 +86,7 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.get('/api/getUsers', dbConnection.getUsers)
+// app.get('/api/getUsers', dbConnection.getUsers)
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
