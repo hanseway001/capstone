@@ -7,7 +7,7 @@ export const styles = {
   }
 };
 
-export default function Error() {
+export function Error() {
   return (
     <div className="App">
       <h2>404</h2>

@@ -7,7 +7,7 @@ export const styles = {
   }
 };
 
-export default function Addcourse() {
+export function Addcourse() {
   return (
     <div className="App">
       <h1>Add Course</h1>

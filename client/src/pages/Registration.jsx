@@ -7,7 +7,7 @@ export const styles = {
   }
 };
 
-export default function Registration() {
+export function Registration() {
   return (
     <div className="App">
       <h1>Registration</h1>
