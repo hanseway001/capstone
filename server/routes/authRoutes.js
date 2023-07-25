@@ -30,6 +30,7 @@ router.post('/login', passport.authenticate('local', { session: false }), (req, 
   // If the authentication is successful, generate a JWT token
   const token = generateToken({ userName: req.user.userName });
   res.json({ token });
+  // res.send('you logged in')
 });
 
 module.exports = router;

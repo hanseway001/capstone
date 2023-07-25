@@ -124,3 +124,47 @@
 {"level":"http","message":"\u001b[0mPOST /auth/login \u001b[33m401\u001b[0m 79.163 ms - -\u001b[0m"}
 {"level":"http","message":"\u001b[0mPOST /auth/login \u001b[32m200\u001b[0m 122.848 ms - 140\u001b[0m"}
 {"level":"http","message":"\u001b[0mPOST /auth/login \u001b[33m401\u001b[0m 206.050 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 36.863 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 7.895 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 6.795 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m401\u001b[0m 148.156 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[32m200\u001b[0m 124.018 ms - 140\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /getUser \u001b[33m404\u001b[0m 9.089 ms - 146\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[32m200\u001b[0m 179.411 ms - 140\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 1.788 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[32m200\u001b[0m 120.521 ms - 140\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 2.999 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 1.585 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 1.284 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /api \u001b[36m304\u001b[0m 35.029 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /login \u001b[33m404\u001b[0m 17.722 ms - 144\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /login \u001b[33m404\u001b[0m 3.121 ms - 144\u001b[0m"}
+{"level":"http","message":"\u001b[0mGET /login \u001b[33m404\u001b[0m 3.429 ms - 144\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m200\u001b[0m 7.903 ms - 4\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m401\u001b[0m 170.705 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[32m200\u001b[0m 121.337 ms - 140\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m200\u001b[0m 4.392 ms - 4\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m204\u001b[0m 1.968 ms - 0\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 27.359 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m204\u001b[0m 1.271 ms - 0\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 21.154 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 25.342 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 3.154 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 3.341 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 1.399 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 2.220 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 2.728 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[32m200\u001b[0m 191.550 ms - 140\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m401\u001b[0m 29.643 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m204\u001b[0m 2.879 ms - 0\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 10.396 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/login \u001b[32m204\u001b[0m 0.522 ms - 0\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 25.448 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 3.551 ms - -\u001b[0m"}
+{"level":"http","message":"\u001b[0mPOST /api/login \u001b[33m400\u001b[0m 32.738 ms - -\u001b[0m"}
+{"level":"http","message":"combine"}
+{"level":"http","message":"::1 - - [25/Jul/2023:14:36:14 +0000] \"POST /api/login HTTP/1.1\" 400 - \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
+{"level":"http","message":"::1 - - [25/Jul/2023:14:37:49 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
+{"level":"http","message":"::1 - - [25/Jul/2023:14:38:37 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
+{"level":"http","message":"::1 - - [25/Jul/2023:14:39:22 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
+{"level":"http","message":"::1 - - [25/Jul/2023:15:23:51 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}

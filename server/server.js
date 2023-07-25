@@ -10,6 +10,7 @@ const token = jwt.sign({foo: 'bar'}, 'shhhh')
 const user = require('./models/userModel');
 const passport = require('passport')
 const authRoutes = require('./routes/authRoutes');
+const cors = require('cors')
 
 //winston for general logging
 const logger = winston.createLogger({
@@ -22,7 +23,7 @@ const logger = winston.createLogger({
 })
 
 //Morgan logging http request and stream into winston
-app.use(morgan('dev', {
+app.use(morgan('combined', {
     stream: {
         write: (message) => {
             logger.http(message.trim())
@@ -32,10 +33,14 @@ app.use(morgan('dev', {
 // parse requests of content-type - application/json
 // Middleware
 app.use(express.json())
-app.use(passport.initialize())
-//Routes
-app.use('/auth', authRoutes)
 app.use(express.urlencoded({extended:false}))
+app.use(passport.initialize())
+app.use(cors())
+
+//Routes
+app.use('/api', authRoutes)
+// app.get('/login', )
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -48,12 +53,13 @@ app.get('/', (req,res) => {
     res.send('hello Morgan!')
 })
 
-app.post('/addUser', (req,res) => {
-    let name = req.body.name
-    let email = req.body.email
-    logger.info(`recieved ${name} ${email}`)
-    res.send(`hello ${name} ${email}`)
-})
+
+// app.post('/addUser', (req,res) => {
+//     let name = req.body.name
+//     let email = req.body.email
+//     logger.info(`recieved ${name} ${email}`)
+//     res.send(`hello ${name} ${email}`)
+// })
 
 // app.post('/register', (req,res) => {
 //     let name = req.headers.userName
