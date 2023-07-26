@@ -24,3 +24,5 @@
 =======
 {"level":"http","message":"\u001b[0mGET /api/getUsers \u001b[32m200\u001b[0m 114.053 ms - 319\u001b[0m"}
 >>>>>>> data
+{"level":"info","message":"home page accesed"}
+{"level":"http","message":"\u001b[0mGET / \u001b[32m200\u001b[0m 15.737 ms - 13\u001b[0m"}
