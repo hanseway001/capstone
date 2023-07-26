@@ -25,6 +25,7 @@
 {"level":"http","message":"\u001b[0mGET /api/getUsers \u001b[32m200\u001b[0m 114.053 ms - 319\u001b[0m"}
 >>>>>>> data
 {"level":"info","message":"home page accesed"}
+<<<<<<< HEAD
 {"level":"http","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 11.108 ms - -\u001b[0m"}
 {"level":"info","message":"home page accesed"}
 {"level":"http","message":"\u001b[0mGET / \u001b[32m200\u001b[0m 16.495 ms - 13\u001b[0m"}
@@ -168,3 +169,6 @@
 {"level":"http","message":"::1 - - [25/Jul/2023:14:38:37 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
 {"level":"http","message":"::1 - - [25/Jul/2023:14:39:22 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
 {"level":"http","message":"::1 - - [25/Jul/2023:15:23:51 +0000] \"POST /api/login HTTP/1.1\" 200 140 \"http://localhost:5173/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}
+=======
+{"level":"http","message":"\u001b[0mGET / \u001b[32m200\u001b[0m 15.737 ms - 13\u001b[0m"}
+>>>>>>> data
