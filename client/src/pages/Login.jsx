@@ -1,8 +1,14 @@
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import React, { useState } from 'react'
 import axios from 'axios'
 
-<<<<<<< HEAD
+export const styles = {
+  // link: {
+    // color: "teal",
+    // cursor: "pointer"
+  // }
+};
+
 export function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,37 +23,6 @@ export function Login() {
       // console.log(username + 'is password')
     }
   };
-=======
-export const styles = {
-//   link: {
-//     // color: "teal",
-//     // cursor: "pointer"
-//   }
-};
-
-export default function Login() {
-  return (
-    <div className="App">
-      <header>
-        <div class="row, center">
-          <img src="src/images/iconL.png" alt="" />
-          <h1 class="white">CAPSTONE</h1>
-        </div>
-        <h2 class="center">COURSE MANAGEMENT MADE EASY</h2>
-
-        <div className="linkContainer">
-          <Link style={styles.link} to={'/Courses'}>
-            Courses
-          </Link>
-          <Link style={styles.link} to={'/Registration'}>
-            Registration
-          </Link>
-          <Link style={styles.link} to={'/About'}>
-            About
-          </Link>
-        </div>
-      </header>
->>>>>>> data
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,90 +43,58 @@ export default function Login() {
 
 
 return (
-  <div>
-    <h1>Login Page</h1>
-    <form onSubmit={handleSubmit}>
-      <div>
-<<<<<<< HEAD
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onInput={handleInputChange}
-          required
-        />
-=======
-        <main class="loginMain">
-          {/* <img src="images/logo.png"  alt="" /> */}
-          <h1 class="center">LOGIN</h1>
-
-          <div class="center">
-            <div class="column">
-              <h2>student login</h2>
-              <input id="loginUsername" type="text" placeholder="username"/>
-              <input id="loginPassword" type="text" placeholder="password"/>
-              <input class="button" type="submit"/>
-            </div>
-            <div class="column">
-              <h2>admin login</h2>
-              <input id="loginUsername" type="text" placeholder="username"/>
-              <input id="loginPassword" type="text" placeholder="password"/>
-              <input class="whiteButton" type="submit"/>
-            </div>
-          </div>
-
-        </main>
-
-        <main class="loginMain2">
-          <img src="images/logo.png"  alt="" />
-          <h1 class="center">ADMIN LOGIN</h1>
-          <div class="center">
-            
-            <div class="column">
-              <h2>admin login</h2>
-              <input id="loginUsername" type="text" placeholder="username"/>
-              <input id="loginPassword" type="text" placeholder="password"/>
-              <input class="whiteButton" type="submit"/>
-            </div>
-          </div>
-        </main>
-
-        {/* <main class="loginMain2">
-          <img src="images/logo.png"  alt="" />
-          <h1 class="center">ADMIN LOGIN</h1>
-          <div class="center">
-            <div class="column">
-              <h2>student login</h2>
-              <input id="loginUsername" type="text" placeholder="username"/>
-              <input id="loginPassword" type="text" placeholder="password"/>
-              <input class="button" type="submit"/>
-            </div>
-            <div class="column">
-              <h2>admin login</h2>
-              <input id="loginUsername" type="text" placeholder="username"/>
-              <input id="loginPassword" type="text" placeholder="password"/>
-              <input class="whiteButton" type="submit"/>
-            </div>
-          </div>
-        </main> */}
-
->>>>>>> data
+  <div className="App">
+    <header>
+      <div className="row, center">
+        <img src="src/images/iconL.png" alt="" />
+        <h1 className="white">CAPSTONE</h1>
       </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onInput={handleInputChange}
-          required
-        />
+      <h2 className="center">COURSE MANAGEMENT MADE EASY</h2>
+
+      <div className="linkContainer">
+        <Link style={styles.link} to={'/Courses'}>
+          Courses
+        </Link>
+        <Link style={styles.link} to={'/Registration'}>
+          Registration
+        </Link>
+        <Link style={styles.link} to={'/About'}>
+          About
+        </Link>
       </div>
-      <button type="submit">Login</button>
-    </form>
+    </header>
+
+    <div>
+      <main className="loginMain">
+        <h1 className='center'>Login Page</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="column">
+            <h1 className="center">student login</h1>
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="LoginUsername"
+              name="username"
+              value={username}
+              onInput={handleInputChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              value={password}
+              onInput={handleInputChange}
+              required
+            />
+          </div>
+          <button className="button" type="submit">Login</button>
+        </form>
+      </main>
+    </div>
   </div>
 );
 }

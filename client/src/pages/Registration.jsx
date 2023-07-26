@@ -10,7 +10,7 @@ export const styles = {
 export function Registration() {
   return (
     <div className="App">
-    <header>
+      <header>
       <div class="row, center">
         <img src="src/images/iconL.png" alt="" />
         <h1 class="white">CAPSTONE</h1>
