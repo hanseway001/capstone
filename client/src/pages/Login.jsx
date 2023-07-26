@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import React, { useState } from 'react'
+import Navbar from "../components/Navbar";
+
 import axios from 'axios'
 
 export const styles = {
@@ -44,34 +46,15 @@ export function Login() {
 
 return (
   <div className="App">
-    <header>
-      <div className="row, center">
-        <img src="src/images/iconL.png" alt="" />
-        <h1 className="white">CAPSTONE</h1>
-      </div>
-      <h2 className="center">COURSE MANAGEMENT MADE EASY</h2>
-
-      <div className="linkContainer">
-        <Link style={styles.link} to={'/Courses'}>
-          Courses
-        </Link>
-        <Link style={styles.link} to={'/Registration'}>
-          Registration
-        </Link>
-        <Link style={styles.link} to={'/About'}>
-          About
-        </Link>
-      </div>
-    </header>
-
+    <Navbar />
+    
     <div>
       <main className="loginMain">
-        <h1 className='center'>Login Page</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="column">
-            <h1 className="center">student login</h1>
-            <label htmlFor="username">Username:</label>
-            <input
+        <h1 className='center'>Login</h1>
+        <form className="loginModel center column" onSubmit={handleSubmit}>
+          <div className="">
+            <label className="black" htmlFor="username">Username:</label>
+            <input className="LoginInputBox"
               type="text"
               id="LoginUsername"
               name="username"
@@ -81,8 +64,8 @@ return (
             />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
-            <input
+            <label className="black" htmlFor="password">Password:</label>
+            <input className="LoginInputBox"
               type="password"
               id="loginPassword"
               name="password"
@@ -91,7 +74,7 @@ return (
               required
             />
           </div>
-          <button className="button" type="submit">Login</button>
+          <button className="LoginSubmitButton" type="submit">Submit</button>
         </form>
       </main>
     </div>
