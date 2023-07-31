@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate  } from "react-router-dom"
 import React, { useState } from 'react'
 import Navbar from "../components/Navbar";
-
+import decode from "jwt-decode"
 import axios from 'axios'
+
 
 export const styles = {
   // link: {
     // color: "teal",
     // cursor: "pointer"
-  // }
-};
-
-export function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    // }
+  };
+  
+  export default function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,15 +32,35 @@ export function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(username + password)
+      // console.log(username + password)
       const response = await axios.post('http://localhost:3001/api/login', { userName: username, password: password },
       {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          // 'Authorization':localStorage.getItem('token')
         }
       }
       );
-      console.log(response.data); // Assuming the server returns some response data
+      // console.log(response.data); // Assuming the server returns some response data
+      let token = response.data
+     // console.log(token.token)
+      localStorage.setItem("jwtToken", token.token)
+      if(token){
+        console.log('inside' ,token.token)
+        try{
+          const decodeToken = decode(token.token);
+          console.log('this is decode ', decodeToken.isAdmin)
+          // navigate('/student', {token: token.token})
+          if (decodeToken.isAdmin) {
+            navigate('/admin' )
+          } else {
+            navigate('/student')
+          }
+        }
+        catch (error) {
+          console.log('error', error)
+        }
+      }
     } catch (error) {
       console.error('Error:', error.response.data);
     }
@@ -82,40 +105,3 @@ return (
 );
 }
 
-
-// export const styles = {
-//   link: {
-//     color: "teal",
-//     cursor: "pointer"
-//   }
-// };
-
-
-// export default function Login() {
-//   return (
-//     <div className="App">
-//       <img src="images/logo.png"  alt="" />
-//       <h1>LOGIN</h1>
-//       <h4>Pages:</h4>
-//       <Link style={styles.link} to={'/Courses'}>
-//         Courses
-//       </Link>
-//       <Link style={styles.link} to={'/Registration'}>
-//         Registration
-//       </Link>
-//       <Link style={styles.link} to={'/About'}>
-//         About
-//       </Link>
-
-//       <form action="/login" method="post">
-//         <input type="text" name="username" id="username" placeholder="Enter your username." required />
-//         <input type="password" name="password" id="password" placeholder="Enter your password." required/>
-//         <button onclick="../server/api/login">Login</button>
-//       </form>
-//       <p>
-//         To register click 
-//         <Link style={styles.link} to={'../api/login'}> here</Link>
-//       </p>
-//     </div>
-//   );
-// }

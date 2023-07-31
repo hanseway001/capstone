@@ -7,7 +7,7 @@ export const styles = {
   }
 };
 
-export function Admin() {
+export default function Admin() {
   return (
     <div className="App">
       <h1>Admin</h1>

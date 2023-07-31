@@ -6,11 +6,14 @@ const PORT = process.env.PORT || 3001;
 const path = require("path");
 const app = express();
 const jwt = require("jsonwebtoken")
-const token = jwt.sign({foo: 'bar'}, 'shhhh')
+// const token = jwt.sign({foo: 'bar'}, 'shhhh')
 const user = require('./models/userModel');
 const passport = require('passport')
 const authRoutes = require('./routes/authRoutes');
 const cors = require('cors')
+const login = require('connect-ensure-login')
+// const student = require('../client/src/pages/protected/Student')
+// const admin = require('../client/src/pages/protected/Admin')
 
 //winston for general logging
 const logger = winston.createLogger({
@@ -35,12 +38,14 @@ app.use(morgan('combined', {
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(passport.initialize())
+// app.use(passport.session())
 app.use(cors())
 
 //Routes
 app.use('/api', authRoutes)
 // app.get('/login', )
-
+// app.use('/students?', login.ensureLoggedIn(), student)
+// app.use('/admin?', login.ensureLoggedIn(), admin)
 
 // Error handling middleware
 app.use((err, req, res, next) => {

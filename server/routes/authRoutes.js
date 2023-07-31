@@ -26,10 +26,22 @@ router.post('/register', async (req, res) => {
 });
 
 // User login
-router.post('/login', passport.authenticate('local', { session: false }), (req, res) => {
+router.post('/login', passport.authenticate('local', { session: false, failureRedirect: '/login'}), async (req, res) => {
   // If the authentication is successful, generate a JWT token
-  const token = generateToken({ userName: req.user.userName });
-  res.json({ token });
+  console.log(req.user.username)
+  console.log(req.user.hash)
+  // console.log(req.body.isAdmin)
+  try {
+    const user = await User.findUserByUserName(req.user.username)
+    console.log('more data')
+    console.log(user.isadmin + '' + user.user_id)
+    const token = generateToken({ user_id: user.user_id, userName: user.username, isAdmin: user.isadmin});
+    res.json({ token });
+    
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
   // res.send('you logged in')
 });
 
