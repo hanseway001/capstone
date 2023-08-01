@@ -16,20 +16,11 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img {
   color: rgba(255, 255, 255, 0.87);
   background-color: #F6F6F6;
   
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-a {
-  margin-left: 45px;
-  color: #82878c;
-}
-a:hover {
-  color: #fff;
 }
 
 body {
@@ -54,10 +45,7 @@ header {
   padding: 20px;
   border-bottom: #2C2F36 solid 3px;
 }
-.userImg {
-  width: 40px;
-  height: 40px;
-}
+
 
 h1 {
   font-size: 3.2em;
@@ -66,12 +54,18 @@ h1 {
   font-family: 'Inter', sans-serif;
   /* font-family: "Vina Sans", sans-serif; */
 }
-h2, h3, h4, h5, h6{
+h2, h3, h4, h5, h6, p{
   color: #82878c;
   font-family: 'Inter', sans-serif;
   /* font-family: 'Outfit', sans-serif; */
 }
-
+a {
+  margin-left: 45px;
+  color: #82878c;
+}
+a:hover {
+  color: #fff;
+}
 
 .navTop {
   display: flex;
@@ -88,6 +82,14 @@ h2, h3, h4, h5, h6{
 .column {
   display: flex;
   flex-direction: column;
+}
+.TextLeft {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  
+  align-items:center;
+  
 }
 .center {
   display: flex;
@@ -122,16 +124,14 @@ h2, h3, h4, h5, h6{
 /* login page only */
 
 .loginMain {
-  margin-left:32%;
-  margin-top: 13%;
-  background-color: #ffffff;
-  padding: 50px 50px 50px 50px;
+  margin: 13% 0 0 32%;
+  padding: 50px;
   width: 30%;
   border-radius: 30px;
+  background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  /* height: 900px; */
   position: relative;
-  position: fixed;
+  position: absolute;
 }
 .loginModel {
   width: 100%;
@@ -140,13 +140,12 @@ h2, h3, h4, h5, h6{
   justify-content: space-between;
 }
 .LoginInputBox {
-  margin-left: 30px;
-  margin: 20px 0px 10px 30px;
-  border: #000 solid 1px;
-  height: 35px;
+  margin: 20px 0px 10px 60px;
   width: 200px;
+  height: 35px;
   font-size: 1em;
   border-radius: 10px;
+  border: #000 solid 1px;
 }
 .LoginSubmitButton {
   padding: 10px 150px;
@@ -155,6 +154,24 @@ h2, h3, h4, h5, h6{
   color: #fff;
   border: #6681e8 solid 2px;
   background-color: #6681e8;
+}
+.bellIcon {
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+}
+.gearIcon {
+  margin-right: 40px;
+  width: 30px;
+  height: 30px;
+}
+.userImg {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+}
+.downarrowIcon {
+  margin-left: 20px;
 }
 
 /* to put the content under the header */
@@ -167,8 +184,21 @@ h2, h3, h4, h5, h6{
   z-index:1;
 } */
 
-/* registration only */
-.regIcon {
+/* registration page only */
+.regInputBox {
+  margin: 20px 0px 10px 0px;
+  width: 200px;
+  height: 35px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: #000 solid 1px;
+}
+
+
+
+
+/* home page navbar only */
+.HPnavbarIcon {
   width: 70px;
   height: 70px;
 }
@@ -176,16 +206,16 @@ h2, h3, h4, h5, h6{
   margin-left: 10px;
   font-size: 1.75em;
 }
-.regHeader {
+.HPnavbarHeader {
   margin: 0px 3%;
 }
-.regSearchbar {
+.HPnavbarSearchbar {
   margin-left: 50px;
   text-decoration: none;
-  border-radius: 15px;
   border: none;
-  background-color: #2C2F36;
+  border-radius: 15px;
   color: #82878c;
+  background-color: #2C2F36;
 }
 .searchIcon {
   padding: 0 10px 0 20px;
@@ -193,16 +223,16 @@ h2, h3, h4, h5, h6{
   height: 30px;
 }
 .navInput {
-  height: 45px;
   width: 350px;
+  height: 45px;
   font-size: 1em;
   border-radius: 15px;
   border: none;
   outline:none;
-  background-color: #2C2F36;
   color: #fff;
+  background-color: #2C2F36;
 }
-.regLinkContainer {
+.HPnavbarLinkContainer {
   margin-top: 10px;
   padding: 20px 10px;
   border-bottom: #2C2F36 solid 3px;
@@ -211,14 +241,21 @@ h2, h3, h4, h5, h6{
 }
 
 
-
-
+/* courses page only */
+.courseMain {
+  width: 900px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
 button {
+  padding: 0.6em 1.2em;
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -250,4 +287,4 @@ button:focus-visible {
 
 ::-webkit-scrollbar {
   width: 0px;
-}/*# sourceMappingURL=style.css.map */
+}/* # sourceMappingURL=style.css.map */

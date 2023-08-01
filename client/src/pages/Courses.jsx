@@ -18,13 +18,13 @@ export function Courses() {
       <h1>LOGIN</h1>
       <h4>Pages:</h4>
 
-      <div>
+      <div className="courseMain">
         <h2>student login</h2>
         <input id="loginUsername" type="text" placeholder="username"/>
         <input id="loginPassword" type="text" placeholder="password"/>
         <input type="submit"/>
       </div>
-      <div>
+      <div className="courseMain">
         <h2>admin login</h2>
         <input id="loginUsername" type="text" placeholder="username"/>
         <input id="loginPassword" type="text" placeholder="password"/>

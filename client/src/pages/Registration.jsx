@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react'
+import Navbar from "../components/Navbar";
+
 import axios from 'axios'
 
 export const styles = {
@@ -66,36 +68,18 @@ export function Registration() {
 
   return (
     <div className="App">
-      <header>
-      <div className="row, center">
-        <img src="src/images/iconL.png" alt="" />
-        <h1 className="white">CAPSTONE</h1>
-      </div>
-      <h2 className="center">COURSE MANAGEMENT MADE EASY</h2>
-
-      <div className="linkContainer">
-        <Link style={styles.link} to={'/Courses'}>
-          Courses
-        </Link>
-        <Link style={styles.link} to={'/Registration'}>
-          Registration
-        </Link>
-        <Link style={styles.link} to={'/About'}>
-          About
-        </Link>
-      </div>
-    </header>
+      <Navbar />
 
     <div>
       <main className="loginMain">
         {/* <img src="images/logo.png"  alt="" /> */}
         <h1 className="center">Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="center">
-            <div className="column">
-              <h2>student login</h2>
-              <label htmlFor="username">Username:</label>
-              <input 
+        <form className="loginModel center column" onSubmit={handleSubmit}>
+          <div className=" column center">
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="username">Username:</label>
+              <input className="regInputBox"
                 type="text"
                 id="username"
                 name="username"
@@ -103,16 +87,22 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <label htmlFor="email">Email:</label>
-              <input 
+            </div>
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="email">Email:</label>
+              <input className="regInputBox"
                 type="text"
                 id="email"
                 name="email" 
                 value={email} 
                 onInput={handleInputChange}
                 required/>
-              <label htmlFor="password">Password:</label>
-              <input 
+            </div>
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="password">Password:</label>
+              <input className="regInputBox"
                 type="password" 
                 id="password" 
                 name="password" 
@@ -120,8 +110,10 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <label htmlFor="firstName">First Name:</label>
-              <input 
+            </div>
+            <div className="TextLeft">
+              <label className="black" htmlFor="firstName">First Name:</label>
+              <input className="regInputBox"
                 type="text" 
                 id="firstName" 
                 name="firstName" 
@@ -129,8 +121,11 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <label htmlFor="lastName">Last Name:</label>
-              <input 
+            </div>
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="lastName">Last Name:</label>
+              <input className="regInputBox"
                 type="text" 
                 id="lastName" 
                 name="lastName" 
@@ -138,8 +133,11 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <label htmlFor="phone">Phone:</label>
-              <input 
+            </div>
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="phone">Phone:</label>
+              <input className="regInputBox"
                 type="text" 
                 id="phone"
                 name="phone" 
@@ -147,8 +145,11 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <label htmlFor="address">Address:</label>
-              <input 
+            </div>
+
+            <div className="TextLeft">
+              <label className="black" htmlFor="address">Address:</label>
+              <input className="regInputBox"
                 type="text" 
                 id="address" 
                 name="address" 
@@ -156,8 +157,10 @@ export function Registration() {
                 onInput={handleInputChange}
                 required
               />
-              <input className="button" type="submit"/>
             </div>
+            
+            <input className="LoginSubmitButton" type="submit"/>
+
           </div>
         </form>
       </main>
