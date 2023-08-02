@@ -22,38 +22,34 @@ export const styles = {
     const { name, value } = event.target;
     if (name === 'username') {
       setUsername(value);
-      // console.log(username + 'is username')
     } else if (name === 'password') {
       setPassword(value);
-      // console.log(username + 'is password')
     }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
     try {
-      // console.log(username + password)
       const response = await axios.post('http://localhost:3001/api/login', { userName: username, password: password },
       {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          // 'Authorization':localStorage.getItem('token')
         }
       }
       );
       // console.log(response.data); // Assuming the server returns some response data
       let token = response.data
-     // console.log(token.token)
       localStorage.setItem("jwtToken", token.token)
       if(token){
-        console.log('inside' ,token.token)
+        // console.log('inside' ,token.token)
         try{
           const decodeToken = decode(token.token);
-          console.log('this is decode ', decodeToken.isAdmin)
-          // navigate('/student', {token: token.token})
           if (decodeToken.isAdmin) {
+            console.log('You are an admin')
             navigate('/admin' )
           } else {
+            console.log('routing to student page')
             navigate('/student')
           }
         }

@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-
+// import LogoutButton from './LogoutButton';
 
 export const styles = {
     // link: {
@@ -14,8 +14,8 @@ const HomePageNavbar = () => {
 
         <div className="regHeader row, center, spacing">
           <div className="row, center">
-            <img class="regIcon" src="src/images/iconL.png" alt="" />
-            <p class="titleSize white">Capstone</p>
+            <img className="regIcon" src="src/images/iconL.png" alt="" />
+            <p className="titleSize white">Capstone</p>
             <div className="regSearchbar center">
               <img className="searchIcon" src="src/images/searchIcon.png" alt="search icon" />
               <input className="navInput" type="text" placeholder="Search" />
@@ -23,7 +23,7 @@ const HomePageNavbar = () => {
           </div>
 
           <div className="row, center">
-            <img class="userImg" src="src/images/user.png" alt="user" />
+            <img className="userImg" src="src/images/user.png" alt="user" />
             <h5 className="white">Nicolas M.</h5>
           </div>
         </div>

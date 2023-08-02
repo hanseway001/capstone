@@ -18,7 +18,7 @@ import Addcourse from './pages/AddCourse'
 export default function  App() {
   // setToken(token)
   const token = localStorage.getItem('jwtToken')
-  console.log('this is from local storage',token)
+  // console.log('this is from local storage',token)
   return (
       <Routes>
         <Route path= '/' element={<Home />} />

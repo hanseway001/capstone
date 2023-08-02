@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-
+import LogoutButton from './LogoutButton';
 
 export const styles = {
     // link: {
@@ -30,7 +30,8 @@ const Navbar = () => {
       </div>
         <nav className='navbar'>
              <Link style={styles.link} to={'/'}>Home</Link>
-             <Link style={styles.link} to={'/Login'}>Login</Link>
+             {/* <Link style={styles.link} to={'/Login'}>Login</Link> */}
+             <LogoutButton />
         </nav>
     </header>
     )

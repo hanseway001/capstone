@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export const styles = {
   link: {
@@ -9,7 +10,9 @@ export const styles = {
 
 export default function Student() {
   return (
+    
     <div className="App">
+      <Navbar />
       <h1>Student</h1>
       <h4>Pages:</h4>
       <Link style={styles.link} to={'/Courses'}>
@@ -22,5 +25,6 @@ export default function Student() {
         About
       </Link>
     </div>
-  );
+  
+  )
 }
