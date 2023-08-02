@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HomePageNavbar from "../components/HomePageNavBar";
 
+import Navbar from "../components/Navbar";
 
 export const styles = {
   link: {
@@ -9,13 +10,12 @@ export const styles = {
   }
 };
 
-export function Student() {
+export default function Student() {
   return (
+    
     <div className="App">
-      <HomePageNavbar />
-
-      <img src="images/logo.png"  alt="" />
-      <h1>LOGIN</h1>
+      <Navbar />
+      <h1>Student</h1>
       <h4>Pages:</h4>
 
       <div>
@@ -31,5 +31,6 @@ export function Student() {
         <input type="submit"/>
       </div>
     </div>
-  );
+  
+  )
 }

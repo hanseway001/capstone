@@ -9,7 +9,7 @@ export const styles = {
   }
 };
 
-export function Courses() {
+export default function Courses() {
   return (
     <div className="App">
       <HomePageNavbar />
