@@ -30,6 +30,8 @@ router.post('/login', passport.authenticate('local', { session: false, failureRe
     const user = await User.findUserByUserName(req.user.username)
     // console.log('more data')
     // console.log(user.isadmin + '' + user.user_id)
+//get password from the database
+    // if user exits compare passwords with provided password
     const token = generateToken({ user_id: user.user_id, userName: user.username, isAdmin: user.isadmin});
     res.json({ token });
     

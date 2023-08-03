@@ -9,13 +9,17 @@ passport.use(
     { usernameField: 'userName', passwordField: 'password' },
     async (userName, password, done) => {
       try {
+        console.log('I am in localstrtegy')
+        console.log(userName, ' and ', password)
         const user = await User.findUserByUserName(userName);
         if (!user) {
+          console.log('incoprrect user')
           return done(null, false, { message: 'Incorrect user name.' });
         }
 
         const isMatch = await bcrypt.compare(password, user.hash);
         if (!isMatch) {
+          console.log('wrong password')
           return done(null, false, { message: 'Incorrect password.' });
         }
 
