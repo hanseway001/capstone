@@ -11,5 +11,8 @@
     "node": "20.3.0"
   },
   "author": "Wayne and Tegan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jwt-decode": "^3.1.2"
+  }
 }

@@ -15,15 +15,15 @@ const HomePageNavbar = () => {
         <div className="HPnavbarHeader row, center, spacing">
           <div className="row, center">
             {/* <img class="HPnavbarIcon" src="src/images/iconL.png" alt="" /> */}
-            <p className="titleSize white">Capstone</p>
+            {/* <p className="titleSize white">Capstone</p> */}
+                <img className="regIcon" src="src/images/iconL.png" alt="" />
+                <p className="titleSize white">Capstone</p>
             <div className="HPnavbarSearchbar center">
-            <img className="regIcon" src="src/images/iconL.png" alt="" />
-            <p className="titleSize white">Capstone</p>
-            <div className="regSearchbar center">
-              <img className="searchIcon" src="src/images/searchIcon.png" alt="search icon" />
-              <input className="navInput" type="text" placeholder="Search" />
+                <div className="regSearchbar center">
+                  <img clas sName="searchIcon" src="src/images/searchIcon.png" alt="search icon" />
+                  <input className="navInput" type="text" placeholder="Search" />
+                </div>
             </div>
-          </div>
         </div>
           <div className="row, center">
             <img className='bellIcon' src="src/images/bellicon.png" alt="bell icon" />

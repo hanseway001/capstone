@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { Link } from "react-router-dom"
-// import React, { useState } from 'react'
-import Navbar from "../components/Navbar";
-
-
-=======
 import { Link, useNavigate  } from "react-router-dom"
 import React, { useState } from 'react'
 import Navbar from "../components/Navbar";
 import decode from "jwt-decode"
 import axios from 'axios'
->>>>>>> 151ae8af6d2567992ca632c41a42d6e3618a2b4e
 
 
 export const styles = {
@@ -18,34 +10,6 @@ export const styles = {
     // color: "teal",
     // cursor: "pointer"
     // }
-<<<<<<< HEAD
-  };
-  
-  export function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    
-    const handleInputChange = (event) => {
-      const { name, value } = event.target;
-      if (name === 'username') {
-        setUsername(value);
-        // console.log(username + 'is username')
-      } else if (name === 'password') {
-        setPassword(value);
-        // console.log(username + 'is password')
-      }
-    };
-    
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-      try {
-        console.log(username + password)
-        const response = await axios.post('http://localhost:3001/api/login', { userName: username, password: password },
-        {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-=======
   };
   
   export default function Login() {
@@ -72,7 +36,6 @@ export const styles = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         }
->>>>>>> 151ae8af6d2567992ca632c41a42d6e3618a2b4e
       }
       );
       // console.log(response.data); // Assuming the server returns some response data
