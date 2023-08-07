@@ -1,40 +1,40 @@
 import { Link } from "react-router-dom"
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import Navbar from "../components/Navbar";
 
-import axios from 'axios'
+
 
 export const styles = {
   // link: {
     // color: "teal",
     // cursor: "pointer"
-  // }
-};
-
-export function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    if (name === 'username') {
-      setUsername(value);
-      // console.log(username + 'is username')
-    } else if (name === 'password') {
-      setPassword(value);
-      // console.log(username + 'is password')
-    }
+    // }
   };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      console.log(username + password)
-      const response = await axios.post('http://localhost:3001/api/login', { userName: username, password: password },
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+  
+  export function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+      if (name === 'username') {
+        setUsername(value);
+        // console.log(username + 'is username')
+      } else if (name === 'password') {
+        setPassword(value);
+        // console.log(username + 'is password')
+      }
+    };
+    
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        console.log(username + password)
+        const response = await axios.post('http://localhost:3001/api/login', { userName: username, password: password },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
       }
       );
       console.log(response.data); // Assuming the server returns some response data
@@ -47,7 +47,7 @@ export function Login() {
 return (
   <div className="App">
     <Navbar />
-    
+
     <div>
       <main className="loginMain">
         <h1 className='center'>Login</h1>
@@ -61,7 +61,7 @@ return (
               value={username}
               onInput={handleInputChange}
               required
-            />
+              />
           </div>
           <div>
             <label className="black" htmlFor="password">Password:</label>
@@ -72,7 +72,7 @@ return (
               value={password}
               onInput={handleInputChange}
               required
-            />
+              />
           </div>
           <button className="LoginSubmitButton" type="submit">Submit</button>
         </form>
