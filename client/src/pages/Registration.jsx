@@ -11,7 +11,7 @@ export const styles = {
   // }
 };
 
-export function Registration() {
+export default function Registration() {
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');

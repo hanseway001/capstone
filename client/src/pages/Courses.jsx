@@ -68,7 +68,7 @@ const App = () => {
   // export default app;
 
 
-export function Courses() {
+export default function Courses() {
   return (
     <div className="App">
       <HomePageNavbar />
