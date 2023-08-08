@@ -60,17 +60,17 @@ export default function StudentInfo() {
 
         <TableBody>
           <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Brand</TableCell>
-            <TableCell>Image</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell>Rating</TableCell>
-          </TableRow>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Brand</TableCell>
+              <TableCell>Image</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Rating</TableCell>
+            </TableRow>
           </TableHead>
 
-        {
-          // serverData.map((item, index) => (
+        {/* { */}
+          {/* // serverData.map((item, index) => ( */}
             <TableRow >
           {/* //   <td>{item.username}</td>
           //   <td>{item.email}</td>
@@ -83,8 +83,8 @@ export default function StudentInfo() {
             <TableCell>{serverData.lastname}</TableCell>
             <TableCell>{serverData.telephone}</TableCell>
           </TableRow>
-        // ))
-      }
+        {/* // )) */}
+      {/* } */}
       </TableBody>
 </Table>
       </div>
