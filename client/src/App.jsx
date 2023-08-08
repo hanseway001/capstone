@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Courses from './pages/Courses'
 import Registration from './pages/registration'
 import Student from './pages/Student'
+import Studentinfo from './pages/Studentinfo'
 import About from './pages/About'
 import Error from './pages/Error'
 import Admin from './pages/Admin'
@@ -28,6 +29,12 @@ export default function  App() {
         <Route path= '/student'  element= { 
           <ProtectedRoute token={token}>
             <Student />
+          </ProtectedRoute>  
+          }
+        />
+        <Route path= '/studentinfo'  element= { 
+          <ProtectedRoute token={token}>
+            <Studentinfo />
           </ProtectedRoute>  
           }
         />
