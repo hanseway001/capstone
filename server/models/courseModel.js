@@ -25,7 +25,7 @@ class Course {
         try {
           const { rows } = await pool.query(query)
           console.log("we are in findcourses")
-          return rows
+          return rows 
         } catch (err) {
           throw err
         }
