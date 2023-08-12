@@ -19,6 +19,104 @@ import Paper from '@mui/material/Paper';
 // import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+export default function CourseInfo() {
+  const [serverData, setServerData] = useState([]);
+  
+  useEffect( () => {
+    const myHeaders = {
+      'content-type': 'applications/json',
+       Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+    }
+    async function fetchData() {}
+    fetch("http://localhost:3001/api/getCourseInfo", {
+      method: 'GET',
+      headers: myHeaders,
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        return res.json();
+      } else {
+        throw new Error('Something went wrong on api server!');
+      }
+      // res.json()
+    })
+    .then(response => {
+      setServerData(response.course)
+      console.log('this is the serverdata', JSON.stringify(serverData[0]));
+      console.log('this is response ', response.course)
+    }).catch(error => {
+      console.error(error);
+    });
+  fetchData()
+      // (data) => setData(data.message));
+  }, [])
+// }
+// END OF NEW STUFF
+// console.log(Course);
+
+
+
+// export default function Courses() {
+  return (
+    <div className="App">
+      {/* <HomePageNavbar /> */}
+    
+    {/* <div className="content"> */}
+        {/* <Navbar /> */}
+        <h1>Course Info</h1>
+        <h4>Pages:</h4>
+        <div>
+          
+  <Table>
+
+        <TableHead>
+          <TableRow>
+            <TableCell>Title</TableCell>
+            <TableCell>Description</TableCell>
+            <TableCell>Classroom Number</TableCell>
+            <TableCell>Capacity</TableCell>
+            <TableCell>Credit Hours</TableCell>
+            <TableCell>Tuition cost</TableCell>
+          </TableRow>
+        </TableHead>
+  
+        <TableBody>
+        {   
+          <TableRow >
+            <TableCell>{serverData.title}</TableCell>
+            <TableCell>{serverData.description}</TableCell>
+            <TableCell>{serverData.classroom_number}</TableCell>
+            <TableCell>{serverData.maximum_capacity}</TableCell>
+            <TableCell>{serverData.credit_hour}</TableCell>
+            <TableCell>{serverData.tuition_cost}</TableCell>
+          </TableRow>
+          // ))
+        } 
+        </TableBody>
+    </Table>
+      </div>
+    {/* <p>JSON.stringify(serverData)</p> */}
+    </div>
+  
+  )  
+}
+
+
+// {/* <h1>Server Data</h1>
+// <ul>
+//   {serverData.map((item, index) => (
+//     <li key={index}>
+//       {/* Render each object's properties here */}
+//       <p>{item.title}</p>
+//       <p>{item.description}</p>
+//       {/* Repeat for other properties */}
+//     </li>
+//   ))}
+// </ul> */}
+
+
+
+
 
 // export const styles = {
 //   link: {
@@ -83,96 +181,3 @@ import axios from 'axios';
 //     cursor: "pointer"
 //   }
 // };
-
-
-export default function StudentInfo() {
-  const [serverData, setServerData] = useState({});
-  
-  useEffect( () => {
-    const myHeaders = {
-      'content-type': 'applications/json',
-       Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
-    }
-    async function fetchData() {}
-    fetch("http://localhost:3001/api/getCourseInfo", {
-      method: 'GET',
-      headers: myHeaders,
-    })
-    .then((res) => {
-      if (res.status === 200) {
-        return res.json();
-      } else {
-        throw new Error('Something went wrong on api server!');
-      }
-      // res.json()
-    })
-    .then(response => {
-      setServerData(response.course)
-      console.debug('this is the user info', JSON.stringify(serverData));
-      console.log(serverData)
-    }).catch(error => {
-      console.error(error);
-    });
-  fetchData()
-      // (data) => setData(data.message));
-  }, [])
-// }
-// END OF NEW STUFF
-// console.log(Course);
-
-
-
-// export default function Courses() {
-  return (
-    <div className="App">
-      {/* <HomePageNavbar /> */}
-    
-    {/* <div className="content"> */}
-        {/* <Navbar /> */}
-        <h1>Course Info</h1>
-        <h4>Pages:</h4>
-        <div>
-          
-  <Table>
-
-        <TableHead>
-          <TableRow>
-            <TableCell>Title</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Classroom Number</TableCell>
-            <TableCell>Capacity</TableCell>
-            <TableCell>Credit Hours</TableCell>
-            <TableCell>Tuition cost</TableCell>
-          </TableRow>
-        </TableHead>
-  
-        <TableBody>
-        {   
-        // Object.entries(course).map(([key, val]) => 
-        // <h2 key={key}>{key}: {val}</h2>
-        // )
-        // Object.entries(Course).map((item, index) => (
-          <TableRow >
-              {/* <td>{item.title}</td> */}
-              {/* <td>{item.description}</td> */}
-              {/* <td>{item.classroom_number}</td>  */}
-              {/* <td>{item.maximum_capacity}</td>  */}
-              {/* <td>{item.credit_hour}</td>  */}
-              {/* <td>{item.tuition_cost}</td>  */}
-            <TableCell>{serverData.title}</TableCell>
-            <TableCell>{serverData.description}</TableCell>
-            <TableCell>{serverData.classroom_number}</TableCell>
-            <TableCell>{serverData.maximum_capacity}</TableCell>
-            <TableCell>{serverData.credit_hour}</TableCell>
-            <TableCell>{serverData.tuition_cost}</TableCell>
-          </TableRow>
-          // ))
-        } 
-        </TableBody>
-    </Table>
-      </div>
-    {/* <p>JSON.stringify(serverData)</p> */}
-    </div>
-  
-  )  
-}

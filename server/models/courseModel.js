@@ -16,10 +16,7 @@ class Course {
     //   }
     
       static async findCourses() {
-        // console.log(Course)
         const query = {
-        //   text: 'SELECT * FROM user WHERE username = $1',
-        //   values: [userName],
           text: 'SELECT * FROM course',
         }
         try {
