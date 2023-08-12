@@ -16,14 +16,14 @@ router.get('/example', (req, res) => {
 
 
 router.get('/getCourseInfo', async (req, res) => {
+  console.log("we are in get course info");
   try{
-    console.log("we are in get course info");
     // const JWT = req.headers.authorization
     // console.log('this is the JWT/ from the header', JWT)
     // const decodeToken = jwt_decode(req.headers.authorization);
     // console.log('this is the decoded JWT', decodeToken)
     const course = await Course.findCourses()
-    console.log('the is the course list', course)
+    // console.log('the is the course list', course)
     res.json({ course});
 
   }  catch (err) {
