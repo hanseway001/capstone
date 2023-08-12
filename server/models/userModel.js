@@ -28,6 +28,26 @@ class User {
           throw err
         }
       }
+
+      static async updateUserByID(userId, updatedInfo) {
+        const query = {
+          text: `update users set 
+          username = ${updatedInfo.username}
+          email = ${updatedInfo.email}
+          firstname = ${updatedInfo.firstname}
+          lastname = ${updatedInfo.lastname}
+          phone = ${updatedInfo.phone}
+          address = ${updatedInfo.address}
+           where user_id = ${userId};`,
+          values: [],
+        }
+        try {
+          const { updatedUser } = await pool.query(query)
+          return updatedUser[0]
+        } catch (err) {
+          throw err
+        }
+      }
 }
 
 module.exports = User

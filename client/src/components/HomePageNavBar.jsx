@@ -20,7 +20,7 @@ const HomePageNavbar = () => {
                 <p className="titleSize white">Capstone</p>
             <div className="HPnavbarSearchbar center">
                 <div className="regSearchbar center">
-                  <img clas sName="searchIcon" src="src/images/searchIcon.png" alt="search icon" />
+                  <img className="searchIcon" src="src/images/searchIcon.png" alt="search icon" />
                   <input className="navInput" type="text" placeholder="Search" />
                 </div>
             </div>
