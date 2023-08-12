@@ -15,8 +15,8 @@ class Course {
     //     }
     //   }
     
-      static async findCourses(userName) {
-        console.log(Course)
+      static async findCourses() {
+        // console.log(Course)
         const query = {
         //   text: 'SELECT * FROM user WHERE username = $1',
         //   values: [userName],
@@ -24,28 +24,28 @@ class Course {
         }
         try {
           const { rows } = await pool.query(query)
-          console.log(rows[0])
-          return rows[0]
+          console.log("we are in findcourses")
+          return rows
         } catch (err) {
           throw err
         }
       }
 
-      static async findCourseByCost(tuition_cost) {
-        const query = {
-        //   text: 'SELECT * FROM user WHERE username = $1',
-        //   values: [userName],
-        text: 'SELECT * FROM course WHERE tuition_cost = $900.00',
-          values: [tuition_cost],
-        }
-        try {
-          const { rows } = await pool.query(query)
-        //   console.log(rows[0])
-          return rows[0]
-        } catch (err) {
-          throw err
-        }
-      }
+    //   static async findCourseByCost(tuition_cost) {
+    //     const query = {
+    //     //   text: 'SELECT * FROM user WHERE username = $1',
+    //     //   values: [userName],
+    //     text: 'SELECT * FROM course WHERE tuition_cost = $900.00',
+    //       values: [tuition_cost],
+    //     }
+    //     try {
+    //       const { rows } = await pool.query(query)
+    //     //   console.log(rows[0])
+    //       return rows[0]
+    //     } catch (err) {
+    //       throw err
+    //     }
+    //   }
 }
 
 module.exports = Course
