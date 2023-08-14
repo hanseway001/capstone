@@ -44,7 +44,7 @@ export default function Registration() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(username + password)
+      // console.log(username + password)
       const response = await axios.post('http://localhost:3001/api/register', 
       { userName: username,
         email: email,
@@ -60,7 +60,7 @@ export default function Registration() {
         }
       }
       );
-      console.log(response.data); // Assuming the server returns some response data
+      // console.log(response.data); // Assuming the server returns some response data
     } catch (error) {
       console.error('Error:', error.response.data);
     }

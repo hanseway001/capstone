@@ -50,13 +50,9 @@ router.get('/getStudentInfo', async (req, res) => {
 
   try{
     const JWT = req.headers.authorization
-    // console.log('this is the JWT from the header', JWT)
     const decodeToken = jwt_decode(req.headers.authorization);
-    // console.log('this is the decoded JWT', decodeToken)
     const user = await User.findUserByUserName(decodeToken.userName)
-    // console.log(user.email)
     res.json({ user});
-
   }  catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Internal server error' });

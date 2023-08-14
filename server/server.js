@@ -11,6 +11,7 @@ const passport = require('passport')
 const authRoutes = require('./routes/authRoutes')
 const courseRoutes = require('./routes/courseRoutes')
 const adminRoutes = require('./routes/adminRoutes')
+const userRoutes = require('./routes/userRoutes')
 const cors = require('cors')
 const login = require('connect-ensure-login')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -45,6 +46,7 @@ app.use(cors())
 app.use('/api', authRoutes)
 //Protected Routes
 app.use('/api', auth, courseRoutes)
+app.use('/api', auth, userRoutes)
 // app.use('/api/admin', auth, adminRoutes)
 
 // app.get('/middleware', authMiddleware, (req, res) => {

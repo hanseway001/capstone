@@ -19,6 +19,11 @@ export default function StudentInfo() {
   const [serverData, setServerData] = useState({});
   const [editModalOpen, setEditModalOpen] = useState(false)
 
+  const handleCloseModal = () => {
+    setEditModalOpen(false);
+  }
+
+
   useEffect(() => {
     const myHeaders = {
       'content-type': 'applications/json',
@@ -35,16 +40,15 @@ export default function StudentInfo() {
         } else {
           throw new Error('Something went wrong on api server!');
         }
-        // res.json()
+
       })
       .then(response => {
         setServerData(response.user)
-        console.log('this is the user info', JSON.stringify(serverData));
+        // console.log('this is the user info', JSON.stringify(serverData));
       }).catch(error => {
         console.error(error);
       });
     fetchData()
-    // (data) => setData(data.message));
   }, [])
 
   return (
@@ -64,18 +68,10 @@ export default function StudentInfo() {
                 <TableCell>Last Name</TableCell>
                 <TableCell>Telephone</TableCell>
                 <TableCell>Address</TableCell>
-                {/* <TableCell>Telephone</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
-              {/* { */}
-              {/* // serverData.map((item, index) => ( */}
               <TableRow >
-                {/* //   <td>{item.username}</td>
-          //   <td>{item.email}</td>
-          //   <td>{item.firstname}</td>
-          //   <td>{item.lastname}</td>
-        //   <td>{item.telephone}</td> */}
                 <TableCell>{serverData.username}</TableCell>
                 <TableCell>{serverData.email}</TableCell>
                 <TableCell>{serverData.firstname}</TableCell>
@@ -83,21 +79,14 @@ export default function StudentInfo() {
                 <TableCell>{serverData.telephone}</TableCell>
                 <TableCell>{serverData.address}</TableCell>
               </TableRow>
-              {/* <TableRow>
-                <TableCell align="right" colSpan={1} rowSpan={1}> */}
-                {/* </TableCell>
-              </TableRow> */}
-              {/* // )) */}
-              {/* } */}
             </TableBody>
           </Table>
               <button className="btn" onClick={() => setEditModalOpen(true)}>
                 Edit
               </button>
         </TableContainer>
-      { editModalOpen && <EditUserModal>Edit User Modal</EditUserModal>}
+      { editModalOpen && <EditUserModal onClose={() => handleCloseModal()}>Edit User Modal</EditUserModal>}
       </div>
-      {/* <p>JSON.stringify(serverData)</p> */}
       </div>
     </div>
 

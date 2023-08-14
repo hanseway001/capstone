@@ -35,7 +35,7 @@ export default function Login() {
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-          }
+          },
         }
       );
       // console.log(response.data); // Assuming the server returns some response data

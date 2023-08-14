@@ -29,21 +29,34 @@ class User {
         }
       }
 
-      static async updateUserByID(userId, updatedInfo) {
+      static async updateUserByID( updatedInfo ) {
+        console.log(updatedInfo)
         const query = {
           text: `update users set 
-          username = ${updatedInfo.username}
-          email = ${updatedInfo.email}
-          firstname = ${updatedInfo.firstname}
-          lastname = ${updatedInfo.lastname}
-          phone = ${updatedInfo.phone}
-          address = ${updatedInfo.address}
-           where user_id = ${userId};`,
-          values: [],
+          username = $1,
+          email = $2,
+          firstname = $3,
+          lastname = $4,
+          telephone = $5,
+          address = $6
+          where user_id = $7;`,
+          values: [
+            updatedInfo.username,
+            updatedInfo.email,
+            updatedInfo.firstname,
+            updatedInfo.lastname,
+            updatedInfo.telephone,
+            updatedInfo.address,
+            updatedInfo.user_id
+          ],
         }
         try {
-          const { updatedUser } = await pool.query(query)
-          return updatedUser[0]
+          const { rowCount } = await pool.query(query);
+          console.log('Rows updated:', rowCount);
+          return rowCount; // Return the number of updated rows
+          // const { updatedUser } = await pool.query(query)
+          // console.log('this is the returned query', updatedUser)
+          // return updatedUser[0]
         } catch (err) {
           throw err
         }
