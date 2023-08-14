@@ -6,17 +6,8 @@ import axios from 'axios'
 // const User = require('../models/userModel');
 
 
-export const EditUserModal = () => {
+export const EditUserModal = ({onClose, children}) => {
     const [serverData, setServerData] = useState({});
-    // const [userID, setUserId] = useState()
-    // const [userName, setUserName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [firstName, setFirstName] = useState('')
-    // const [lastName, setLastName] = useState('')
-    // const [phone, setPhone] = useState('')
-    // const [address, setAddress] = useState('')
-    // const [editModalOpen, setEditModalOpen] = useState(false)
-
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -24,82 +15,71 @@ export const EditUserModal = () => {
             setServerData(prevState => {
                 let newUserName = {username: value}
                 let copyServerData = Object.assign({}, serverData, newUserName)
-                // console.log(copyServerData)
+
                 return  copyServerData                           
             })
         } else if (name === 'email') {
             setServerData(prevState => { 
                 let newEmail = {email: value}
                 let copyServerData = Object.assign({}, serverData, newEmail);  // creating copy of state variable jasper
-                // newServerData.email = value; 
-                // console.log('this  is serverdata ', serverData)                    // update the name property, assign a new value                 
+
                 return  copyServerData                                 // return new object jasper object
             });
         } else if (name === 'firstName') {
             setServerData(prevState => { 
                 let newFirstName = {firstname: value}
                 let copyServerData = Object.assign({}, serverData, newFirstName)
-                // console.log(copyServerData)
+
                 return  copyServerData 
             });
         } else if (name === 'lastName') {
             setServerData(prevState => { 
                 let newLastName = {lastname: value}
                 let copyServerData = Object.assign({}, serverData, newLastName)
-                // console.log(copyServerData)
+
                 return  copyServerData                       
             });
         } else if (name === 'phone') {
             setServerData(prevState => { 
                 let newPhone = {telephone: value}
                 let copyServerData = Object.assign({}, serverData, newPhone)
-                // console.log(copyServerData)
+
                 return  copyServerData 
             });
         } else if (name === 'address') {
             setServerData(prevState => { 
                 let newAddress = {address: value}
                 let copyServerData = Object.assign({}, serverData, newAddress)
-                // console.log(copyServerData)
+
                 return  copyServerData 
             });
         }
-      };
+    };
 
 
-      const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('updated user info ', serverData)
+        // console.log('Submit button clicked');
         try {
-          const response = await axios.post('http://localhost:3001/api/editUserInfo', { serverData },
+            const response = await axios.post('http://localhost:3001/api/editUserInfo', { serverData },
             {
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              }
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+                },
+                body: serverData
             }
-          );
-          // console.log(response.data); // Assuming the server returns some response data
-          let token = response.data
-          localStorage.setItem("jwtToken", token.token)
-          if (token) {
-            // console.log('inside' ,token.token)
-            try {
-              const decodeToken = decode(token.token);
-              if (decodeToken.isAdmin) {
-                console.log('You are an admin')
-                navigate('/admin')
-              } else {
-                console.log('routing to student page')
-                navigate('/student')
-              }
-            }
-            catch (error) {
-              console.log('error', error)
-            }
-          }
+            )
+
+            // console.log(res)
+            // console.log('after axios.post')
+            onClose()
+            
         } catch (error) {
-          console.error('Error:', 'error.response.data');
+            console.error('Error:', error);
+            onClose()
         }
+        // console.log('should close modal here also')
     }
 
     useEffect(() => {
@@ -134,6 +114,7 @@ export const EditUserModal = () => {
     return (
         <div className="editModal-container">
             <div className="editModal">
+                {children}
                 <form className="form-group" onSubmit={handleSubmit}>
                     <p>Please edit any of the following information. {serverData.username}</p>
                     <div className="form-group">
