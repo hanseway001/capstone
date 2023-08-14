@@ -61,14 +61,16 @@ export default function CourseInfo() {
     <div className="App">
       {/* <HomePageNavbar /> */}
     
-    {/* <div className="content"> */}
+    <div className="CourseContent">
         {/* <Navbar /> */}
         <h1>Course Info</h1>
-        <h4>Pages:</h4>
-        <div>
-          
+        <div className="row">
+          <h4>sort by cost</h4>
+          <input id="remember" name="remember" type="checkbox" onclick="validate()"/>
+        </div>
+        {/* <div> */}
+        
   <Table>
-
         <TableHead>
           <TableRow>
             <TableCell>Title</TableCell>
@@ -83,12 +85,27 @@ export default function CourseInfo() {
         <TableBody>
         {   
           <TableRow >
-            <TableCell>{serverData.title}</TableCell>
-            <TableCell>{serverData.description}</TableCell>
-            <TableCell>{serverData.classroom_number}</TableCell>
-            <TableCell>{serverData.maximum_capacity}</TableCell>
-            <TableCell>{serverData.credit_hour}</TableCell>
-            <TableCell>{serverData.tuition_cost}</TableCell>
+            {/* <h1>Server Data</h1> */}
+            {/* <ul> */}
+              {serverData.map((item, index) => (
+                <li className="CourseUnit" key={index}>
+                  {/* Render each object's properties here */}
+                  {/* <p>{item.title}</p>
+                  <p>{item.description}</p>
+                  <p>{item.classroom_number}</p>
+                  <p>{item.maximum_capacity}</p>
+                  <p>{item.credit_hour}</p>
+                  <p>{item.tuition_cost}</p> */}
+                  <TableCell>{item.title}</TableCell>
+                  <TableCell>{item.description}</TableCell>
+                  <TableCell>{item.classroom_number}</TableCell>
+                  <TableCell>{item.maximum_capacity}</TableCell>
+                  <TableCell>{item.credit_hour}</TableCell>
+                  <TableCell>{item.tuition_cost}</TableCell>
+                  {/* Repeat for other properties */}
+                </li>
+              ))}
+            {/* </ul>  */}
           </TableRow>
           // ))
         } 
@@ -96,13 +113,14 @@ export default function CourseInfo() {
     </Table>
       </div>
     {/* <p>JSON.stringify(serverData)</p> */}
-    </div>
-  
+    {/* </div> */}
+  </div>
+
   )  
 }
 
 
-// {/* <h1>Server Data</h1>
+// <h1>Server Data</h1>
 // <ul>
 //   {serverData.map((item, index) => (
 //     <li key={index}>
@@ -112,7 +130,7 @@ export default function CourseInfo() {
 //       {/* Repeat for other properties */}
 //     </li>
 //   ))}
-// </ul> */}
+// </ul> 
 
 
 

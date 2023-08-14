@@ -34,11 +34,10 @@ body {
   color: #F6F6F6;
 }
 header {
-  width: 100%;
+  width: 100vw;
   height: 250px;
   padding-top: 10px;
   background-color: #212328;
-  /* display: flex; */
   position:fixed;
 }
 
@@ -252,6 +251,17 @@ a:hover {
 
 
 /* courses page only */
+.CoursesContent {
+  margin: 13% 0 0 32%;
+  padding: 50px;
+  width: 30%;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  position: relative;
+  position: absolute;
+}
+
 .courseMain {
   width: 900px;
   height: 500px;
@@ -261,6 +271,14 @@ a:hover {
   align-items: center;
 }
 
+.CourseUnit {
+  margin: 20px 0px 10px 60px;
+  width: 70vw;
+  height: auto;
+  font-size: 1em;
+  border-radius: 10px;
+  border: #000 solid 1px;
+}
 
 button {
   padding: 0.6em 1.2em;

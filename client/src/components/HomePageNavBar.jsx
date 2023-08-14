@@ -30,7 +30,7 @@ const HomePageNavbar = () => {
             <img className='gearIcon' src="src/images/gearicon.png" alt="gear icon" />
             {/* <img class="userImg" src="src/images/user.png" alt="user" /> */}
             <img className="userImg" src="src/images/user.png" alt="user" />
-            <h5 className="white">Nicolas M.</h5>
+            <h5 className="white"> name here</h5>
             <img className='downarrowIcon' src="src/images/downarrow.png" alt="down arrow" />
           </div>
         </div>
