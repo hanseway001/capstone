@@ -22,6 +22,7 @@ const Navbar = () => {
           Courses
         </Link>
         <Link style={styles.link} to={'/Registration'}>
+          
           Registration
         </Link>
         <Link style={styles.link} to={'/About'}>

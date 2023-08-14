@@ -32,6 +32,19 @@ router.get('/getCourseInfo', async (req, res) => {
   }
 });
 
+router.get('/getCourseInfo', async (req, res) => {
+  console.log("we are in get course info");
+  try{
+    const course = await Course.findCourseByCost()
+    // console.log('the is the course list', course)
+    res.json({ course});
+
+  }  catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 
 router.get('/getStudentInfo', async (req, res) => {
 
