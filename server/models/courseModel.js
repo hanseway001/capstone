@@ -16,7 +16,7 @@ class Course {
     //   }
 
     // use this to check if a checkbox is checked
-    
+
     // function validate(){
     //     var remember = document.getElementById('remember');
     //     if (remember.checked){
@@ -25,22 +25,22 @@ class Course {
     //         alert("You didn't check it! Let me check it for you.")
     //     }
     // }
-    
-      static async findCourses() {
+
+    static async findCourses() {
         const query = {
-            
-        //   text: 'SELECT * FROM course',
-        //   text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
-          text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+
+            //   text: 'SELECT * FROM course',
+            text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
+            //   text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
         }
         try {
-          const { rows } = await pool.query(query)
-          console.log("we are in findcourses")
-          return rows 
+            const { rows } = await pool.query(query)
+            console.log("we are in findcourses")
+            return rows
         } catch (err) {
-          throw err
+            throw err
         }
-      }
+    }
 
     //   static async findCourseByCost(tuition_cost) {
     //     const query = {
@@ -66,10 +66,10 @@ module.exports = Course
 //     // console.log(req.username + 'userName' + req.uesrName)
 //     // insert into users (userName, hash) values (${req.body.userName}, ${req.body.password});`,
 //     pool.query(`
-//         insert into users 
-//         (userName, email, hash, isAdmin, firstName, lastName, telephone, address) 
-//         values 
-//         (${req.body.userName}, ${req.body.email}, ${req.body.password}, 'false', ${req.firstName}, ${req.lastName}, ${req.phone}, ${req.address});`, 
+//         insert into users
+//         (userName, email, hash, isAdmin, firstName, lastName, telephone, address)
+//         values
+//         (${req.body.userName}, ${req.body.email}, ${req.body.password}, 'false', ${req.firstName}, ${req.lastName}, ${req.phone}, ${req.address});`,
 //         (err, results) => {
 //             if (err) throw err;
 //             for (let row of results.rows) {
