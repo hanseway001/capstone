@@ -29,9 +29,9 @@ class Course {
       static async findCourses() {
         const query = {
             
-        //   text: 'SELECT * FROM course',
-        //   text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
-          text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+          text: 'SELECT * FROM course',
+        //   text: `SELECT * FROM course WHERE field = searchValue`,
+          // text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
         }
         try {
           const { rows } = await pool.query(query)
