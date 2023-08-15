@@ -32,9 +32,14 @@ router.get('/getCourseInfo', async (req, res) => {
   }
 });
 
-router.get('/getCourseInfo', async (req, res) => {
-  console.log("we are in get course info");
+router.get('/searchCourseData', async (req, res) => {
+  console.log("we are in get course data stuff");
+  console.log('data', req.body);
   try{
+    const JWT = req.headers.authorization
+    console.log('this is the JWT/ from the header', JWT)
+    const decodeToken = jwt_decode(req.headers.authorization);
+    console.log('this is the decoded JWT', decodeToken)
     const course = await Course.findCourseByCost()
     // console.log('the is the course list', course)
     res.json({ course});
