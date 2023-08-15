@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import HomePageNavbar from "../components/HomePageNavBar";
 
 import Navbar from "../components/Navbar";
+import RegCourses from "../components/RegCourses"
 import { useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 
@@ -21,40 +22,7 @@ export default function Student() {
     const decodeJWT = jwtDecode(jwt)
     console.log(decodeJWT)
     setServerData(decodeJWT)
-    //   const myHeaders = {
-    //     'content-type': 'applications/json',
-    //      Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
-    //   }
-    //   async function fetchData() {}
-    //   fetch("http://localhost:3001/api/Student", {
-    //     method: 'GET',
-    //     headers: myHeaders,
-    //   })
-    //   .then((res) => {
-    //     // return res.json()
-    //     if (res.status === 200) {
-    //       // console.log(JSON.stringify(res))
-    //       // setServerData(res.user)
-    //       // console.log('this is the respose data ',res.user);
-    //       // console.log('you are getting info from student', JSON.stringify(res))
-    //       return res.json();
-    //     } else {
-    //       throw new Error('Something went wrong on api server!');
-    //     }
-    //     // res.json()
-    //   })
-    //   .then(response => {
-    //     console.log(`response: ${JSON.stringify(response.user)}`)
-    //     setServerData(response.user.username)
-    //     // console.log('this is the server data ',response.user);
-    //     // console.log('this is an email s',JSON.stringify(response.user.email))
-    //     // console.log(typeof serverData)
-    //     console.log('this is serverData', serverData)
-    //   }).catch(error => {
-    //     console.error(error);
-    //   });
-    // fetchData()
-    //     // (data) => setData(data.message));
+
   }, [])
 
   return (
@@ -67,6 +35,7 @@ export default function Student() {
         <h4>Pages:</h4>
 
         <Link style={styles.link} to={'/studentinfo'}> Student Info {serverData.userName}</Link>
+        <RegCourses />
       </div>
     </div>
 

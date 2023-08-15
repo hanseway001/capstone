@@ -7,7 +7,17 @@ import axios from 'axios'
 
 
 export const EditUserModal = ({onClose, children}) => {
-    const [serverData, setServerData] = useState({});
+    const [serverData, setServerData] = useState({
+        user_id: '',
+        username: '',
+        email: '',
+        hash: '',
+        firstname: '',
+        lastname: '',
+        telephone: '',
+        address: '',
+        create_date: ''
+    });
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;

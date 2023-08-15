@@ -57,6 +57,23 @@ class Course {
     //       throw err
     //     }
     //   }
+
+      static async getRegCourses(userID) {
+        const query = {
+        //   text: 'SELECT * FROM user WHERE username = $1',
+        //   values: [userName],
+        text: 'select * from course inner join registered on registered.course_id=course.course_id where user_id=$1',
+          values: [userID],
+        }
+        try {
+          const { rows } = await pool.query(query)
+        //   console.log(rows[0])
+          return rows
+        } catch (err) {
+          throw err
+        }
+      }
+
 }
 
 module.exports = Course

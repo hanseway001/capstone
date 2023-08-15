@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import ProtectedRoute  from './components/ProtectedRoute'
 import Home from './pages/Home'
-import Login from './pages/Login'
+// import Login from './pages/Login'
 import Courses from './pages/Courses'
 import Registration from './pages/registration'
 import Student from './pages/Student'
@@ -23,7 +23,7 @@ export default function  App() {
   return (
       <Routes>
         <Route path= '/' element={<Home />} />
-        <Route path= '/login'  element= {<Login />} />
+        {/* <Route path= '/login'  element= {<Login />} /> */}
         <Route path= '/courses'  element= {<Courses />} />
        
         <Route path= '/student'  element= { 
@@ -44,7 +44,12 @@ export default function  App() {
           </ProtectedRoute> 
         }
         />
-
+        <Route path= '/reqCourses'  element= { 
+          <ProtectedRoute token={token}>
+            <Student />
+          </ProtectedRoute>  
+          }
+        />
         <Route path= '/registration'  element= {<Registration />} />
         <Route path= '/about'  element= {<About />} />
         <Route path= '*' element= {<Error />} />
