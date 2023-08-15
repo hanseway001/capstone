@@ -158,12 +158,8 @@ export default function CourseInfo() {
 
           <TableBody className="courseMain">
             {serverData.map((item, index) => (
-<<<<<<< HEAD
               <TableRow key={item.course_id}>
                 <TableCell>{item.course_id}</TableCell>
-=======
-              <TableRow className="CourseUnit" >
->>>>>>> data
                 <TableCell>{item.title}</TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>{item.classroom_number}</TableCell>

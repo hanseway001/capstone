@@ -43,6 +43,24 @@ class Course {
              throw err
            }
          }
+
+
+        static async getRegCourses(userID) {
+          const query = {
+          //   text: 'SELECT * FROM user WHERE username = $1',
+          //   values: [userName],
+          text: 'select * from course inner join registered on registered.course_id=course.course_id where user_id=$1',
+            values: [userID],
+          }
+          try {
+            const { rows } = await pool.query(query)
+          //   console.log(rows[0])
+            return rows
+          } catch (err) {
+            throw err
+          }
+        }
+
 }
 
 module.exports = Course
@@ -74,26 +92,25 @@ module.exports = Course
     //     }
     // }
 
-<<<<<<< HEAD
-    static async findCourses() {
-        const query = {
+    // static async findCourses() {
+    //     const query = {
             
-          text: 'SELECT * FROM course',
-        //   text: `SELECT * FROM course WHERE field = searchValue`,
-          // text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+    //       text: 'SELECT * FROM course',
+    //     //   text: `SELECT * FROM course WHERE field = searchValue`,
+    //       // text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
 
-            //   text: 'SELECT * FROM course',
-            text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
-            //   text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
-        }
-        try {
-            const { rows } = await pool.query(query)
-            console.log("we are in findcourses")
-            return rows
-        } catch (err) {
-            throw err
-        }
-    }
+    //         //   text: 'SELECT * FROM course',
+    //         text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
+    //         //   text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+    //     }
+    //     try {
+    //         const { rows } = await pool.query(query)
+    //         console.log("we are in findcourses")
+    //         return rows
+    //     } catch (err) {
+    //         throw err
+    //     }
+    // }
 
     //   static async findCourseByCost(tuition_cost) {
     //     const query = {
@@ -111,29 +128,12 @@ module.exports = Course
     //     }
     //   }
 
-      static async getRegCourses(userID) {
-        const query = {
-        //   text: 'SELECT * FROM user WHERE username = $1',
-        //   values: [userName],
-        text: 'select * from course inner join registered on registered.course_id=course.course_id where user_id=$1',
-          values: [userID],
-        }
-        try {
-          const { rows } = await pool.query(query)
-        //   console.log(rows[0])
-          return rows
-        } catch (err) {
-          throw err
-        }
-      }
+    
+// }
 
-}
-
-module.exports = Course
+// module.exports = Course
 
 
-=======
->>>>>>> data
 // const createUser = (req,res) => {
 //     // console.log(req.username + 'userName' + req.uesrName)
 //     // insert into users (userName, hash) values (${req.body.userName}, ${req.body.password});`,

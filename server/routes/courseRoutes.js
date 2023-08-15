@@ -32,7 +32,6 @@ router.get('/getCourseInfo', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 router.get('/registeredCourses', async (req, res) => {
   console.log("we are in registered courses");
   console.log(req.body)
@@ -42,7 +41,15 @@ router.get('/registeredCourses', async (req, res) => {
     const decodeToken = jwt_decode(req.headers.authorization);
     console.log('this is the decoded JWT', decodeToken)
     const course = await Course.getRegCourses(decodeToken.user_id)
-=======
+    res.json({ course});
+
+  }  catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
 router.get('/searchCourseData', async (req, res) => {
   console.log("we are in get course data stuff");
   console.log('data', req.body);
@@ -52,7 +59,6 @@ router.get('/searchCourseData', async (req, res) => {
     const decodeToken = jwt_decode(req.headers.authorization);
     console.log('this is the decoded JWT', decodeToken)
     const course = await Course.findCourseByCost()
->>>>>>> data
     // console.log('the is the course list', course)
     res.json({ course});
 
@@ -61,6 +67,7 @@ router.get('/searchCourseData', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 
 
 router.get('/getStudentInfo', async (req, res) => {
