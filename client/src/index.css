@@ -251,15 +251,21 @@ a:hover {
 
 
 /* courses page only */
-.CoursesContent {
-  margin: 13% 0 0 32%;
+.CourseContent {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 30px;
+  margin: 230px 0 0 0;
   padding: 50px;
-  width: 30%;
+  width: 100vw;
+  overflow-x: hidden; 
   border-radius: 30px;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  position: relative;
+  /* position: relative; */
   position: absolute;
+  /* position: fixed; */
+  
 }
 
 .courseMain {
@@ -269,12 +275,14 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .CourseUnit {
-  margin: 20px 0px 10px 60px;
-  width: 70vw;
-  height: auto;
+  /* position: sticky; */
+  /* margin: 20px 0px 10px 60px; */
+  /* width: 70vw; */
+  /* height: auto; */
   font-size: 1em;
   border-radius: 10px;
   border: #000 solid 1px;

@@ -1,7 +1,55 @@
 const pool = require('../config/database')
+// import { useState } from "react";
 
 class Course {
-    // static async createUser(userName, email, password, firstName, lastName, phone, address) {
+    
+
+    static async findCourses() {
+        // const [course, setCourse] = useState("red");
+        // console.log(course);/
+        const query = {
+            
+          text: 'SELECT * FROM course',
+            // text: `SELECT * FROM course WHERE field = searchValue`,
+            // text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+
+            // text: 'SELECT * FROM course',
+            // text: `SELECT * FROM course WHERE tuition_cost = '$900.00'`,
+
+            // text: `SELECT * FROM course WHERE title = 'Introduction to Computer Science'`,
+        }
+        try {
+            const { rows } = await pool.query(query)
+            console.log("we are in findcourses")
+            return rows
+        } catch (err) {
+            throw err
+        }
+    }
+
+   
+      static async searchCourseData(tuition_cost) {
+           const query = {
+           //   text: 'SELECT * FROM user WHERE username = $1',
+           //   values: [userName],
+           text: 'SELECT * FROM course WHERE tuition_cost = $900.00',
+             values: [tuition_cost],
+           }
+           try {
+             const { rows } = await pool.query(query)
+           //   console.log(rows[0])
+             return rows[0]
+           } catch (err) {
+             throw err
+           }
+         }
+}
+
+module.exports = Course
+
+
+
+// static async createUser(userName, email, password, firstName, lastName, phone, address) {
     //     console.log(email)
     //     const query = {
     //     //   text: 'INSERT INTO users(username, email, hash, isadmin, firstname, lastname, telephone, address) VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning *',
@@ -26,6 +74,7 @@ class Course {
     //     }
     // }
 
+<<<<<<< HEAD
     static async findCourses() {
         const query = {
             
@@ -83,6 +132,8 @@ class Course {
 module.exports = Course
 
 
+=======
+>>>>>>> data
 // const createUser = (req,res) => {
 //     // console.log(req.username + 'userName' + req.uesrName)
 //     // insert into users (userName, hash) values (${req.body.userName}, ${req.body.password});`,
@@ -110,7 +161,7 @@ module.exports = Course
 //          console.log(JSON.stringify(row))
 //         }
 //         res.status(200).json(results.rows)
-//     })
+//     }
 // }
 // module.exports = { createUser, findUserByUsername}
 
