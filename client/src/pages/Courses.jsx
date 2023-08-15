@@ -121,10 +121,10 @@ export default function CourseInfo() {
   return (
     <div className="App">
       <div>
-        <HomePageNavbar />
+        {/* <HomePageNavbar /> */}
       </div>
 
-        {/* <Navbar /> */}
+        <Navbar />
       <div className="CourseContent">
         <h1>Course Info</h1>
         <div className="row">
@@ -136,13 +136,14 @@ export default function CourseInfo() {
             <option value="hours">Hours</option>
             <option value="cost">Cost</option>
            </select>
-           <button type="submit">Search</button>
+           <button className="whiteButton" type="submit">Search</button>
            {/* <input id="remember" name="remember" type="checkbox" onClick="validate()" /> */}
 
           </form>
         </div>
         {/* <div> */}
 
+          <div className="courseMain">
         <Table>
           <TableHead>
             <TableRow>
@@ -156,7 +157,7 @@ export default function CourseInfo() {
             </TableRow>
           </TableHead>
 
-          <TableBody className="courseMain">
+          <TableBody >
             {serverData.map((item, index) => (
               <TableRow key={item.course_id}>
                 <TableCell>{item.course_id}</TableCell>
@@ -167,10 +168,11 @@ export default function CourseInfo() {
                 <TableCell>{item.credit_hour}</TableCell>
                 <TableCell>{item.tuition_cost}</TableCell>
               </TableRow>
-            ))}
-
+          ))}
           </TableBody>
         </Table>
+          </div>
+
       </div>
     </div>
 

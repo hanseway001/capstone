@@ -42,13 +42,15 @@ const Navbar = () => {
             <img className='gearIcon' src="src/images/gearicon.png" alt="gear icon" />
             {/* <img class="userImg" src="src/images/user.png" alt="user" /> */}
             <img className="userImg" src="src/images/user.png" alt="user" />
-            <h5 className="white"> name here</h5>
+            <h5 className="white"> Jim</h5>
             <img className='downarrowIcon' src="src/images/downarrow.png" alt="down arrow" />
           </div>
         </div>
 
         <div className="HPnavbarLinkContainer">
-          <Link className="white" style={styles.link} to={'/Courses'}>
+          <Link style={styles.link} to={'/'}>Home</Link>
+
+          <Link className="" style={styles.link} to={'/Courses'}>
             Courses
           </Link>
           <Link style={styles.link} to={'/Student'}>
@@ -60,13 +62,12 @@ const Navbar = () => {
           <Link style={styles.link} to={'/About'}>
             About
           </Link>
-        </div>
-        <nav className='navbar'>
-             <Link style={styles.link} to={'/'}>Home</Link>
               {/* <Link style={styles.link} to={'/Login'}>Login</Link> */}
               { loginModalOpen && <LoginModal  onClose={() => handleCloseModal()}>Login Modal</LoginModal>}
 
              <LogoutButton setLoginModalOpen={setLoginModalOpen}/>
+        </div>
+        <nav className='navbar'>
         </nav>
       </header>
     )

@@ -65,7 +65,7 @@ export default function CourseInfo() {
     return (
         <div className="App">
 
-            <div className="CourseContent">
+            <div className="regCourseContent">
                 <h1>Registered Course Info</h1>
        
                 <TableContainer>

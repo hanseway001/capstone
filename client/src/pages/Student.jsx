@@ -32,9 +32,10 @@ export default function Student() {
       <div className="content">
         {/* <iframe src="https://giphy.com/embed/J7GGZj4j96Bl7V8LtB" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lemonerdy-amazing-you-rock-youre-J7GGZj4j96Bl7V8LtB">via GIPHY</a></p> */}
         <h1>Student</h1>
-        <h4>Pages:</h4>
-
-        <Link style={styles.link} to={'/studentinfo'}> Student Info {serverData.userName}</Link>
+        <div className="row">
+          <h4>Pages:</h4>
+          <Link style={styles.link} to={'/studentinfo'}> Student Info {serverData.userName}</Link>
+        </div>
         <RegCourses />
       </div>
     </div>

@@ -184,7 +184,7 @@ export const EditUserModal = ({onClose, children}) => {
                         </input>
                     </div>
                     <div className="btn">
-                        <button type="submit">Submit</button>
+                        <button className="btn" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -16,10 +16,10 @@ const LogoutButton = ({setLoginModalOpen}) => {
 
   const renderAuthButton = () => {
     if (loggedIn) {
-      return <button onClick={handleLogout}>Logout</button>;
+      return <button className='grayButton' onClick={handleLogout}>Logout</button>;
     } else {
       // return <Link to={'/Login'}>Login</Link>;
-      return <button onClick={() => setLoginModalOpen(true)}>Login</button>
+      return <button className='grayButton' onClick={() => setLoginModalOpen(true)}>Login</button>
     }
   }
 
