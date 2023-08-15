@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HomePageNavbar from "../components/HomePageNavBar";
+// import HomePageNavbar from "../components/HomeNavBar";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import Table from '@mui/material/Table';
@@ -121,6 +121,7 @@ export default function CourseInfo() {
         <Table>
           <TableHead>
             <TableRow>
+              <TableCell>Course ID</TableCell>
               <TableCell>Title</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Classroom Number</TableCell>
@@ -132,7 +133,8 @@ export default function CourseInfo() {
 
           <TableBody>
             {serverData.map((item, index) => (
-              <TableRow >
+              <TableRow key={item.course_id}>
+                <TableCell>{item.course_id}</TableCell>
                 <TableCell>{item.title}</TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>{item.classroom_number}</TableCell>

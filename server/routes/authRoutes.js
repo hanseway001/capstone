@@ -23,16 +23,17 @@ router.post('/register', async (req, res) => {
 });
 
 // User login
-router.post('/login', passport.authenticate('local', { session: false, failureRedirect: '/login'}), async (req, res) => {
- 
+router.post('/login', passport.authenticate('local', { session: false, failureRedirect: '/'}), async (req, res) => {
+ console.log('i am at backend login')
   // If the authentication is successful, mkae a JWT token
   try {
     const user = await User.findUserByUserName(req.user.username)
-    // console.log('more data')
+    console.log('more data', user)
     // console.log(user.isadmin + '' + user.user_id)
 //get password from the database
     // if user exits compare passwords with provided password
     const token = generateToken({ user_id: user.user_id, userName: user.username, isAdmin: user.isadmin});
+    // console.log('logon tokin', token)
     res.json({ token });
     
   } catch (err) {
