@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./EditUserModal.css"
 import axios from 'axios'
+import StudentInfo from "../pages/StudentInfo";
 // import { updateUserByID } from "../../../server/models/userModel";
 // const User = require('../models/userModel');
 
@@ -112,8 +113,9 @@ export const EditUserModal = ({onClose, children}) => {
             })
             .then(response => {
                 setServerData(response.user)
-                console.log("this is server data ", serverData)
-                console.log('this is the user info', JSON.stringify(response.user));
+                Navigate('/StudentInfo')
+                // console.log("this is server data ", serverData)
+                // console.log('this is the user info', JSON.stringify(response.user));
             }).catch(error => {
                 console.error(error);
             });
@@ -128,14 +130,14 @@ export const EditUserModal = ({onClose, children}) => {
                 <form className="form-group" onSubmit={handleSubmit}>
                     <p>Please edit any of the following information. {serverData.username}</p>
                     <div className="form-group">
-                        <label htmlFor="userName">User Name:</label>
+                        {/* <label htmlFor="userName">User Name:</label>
                         <input 
                             name="userName" 
                             type="text" 
                             value={serverData.username}
                             onInput={handleInputChange}
                         >
-                        </input>
+                        </input> */}
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>

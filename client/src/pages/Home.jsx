@@ -13,11 +13,7 @@ export  default function Home() {
     <div className="App">
       <Navbar />
       {/* <HomePageNavbar /> */}
-      <section className="section">
-        <h1>Welcome to my website</h1>
-        <h4>Pages:</h4>
-        {/* <Outlet /> */}
-      </section>
+
       
     </div>
   );

@@ -7,7 +7,7 @@ const LogoutButton = ({setLoginModalOpen}) => {
   const [loggedIn, setLoggedIn] = useState()
 
   const handleLogout = () => {
-    // localStorage.clear()
+    localStorage.clear()
     setLoggedIn(false)
     // setLoginModalOpen(false)
     navigate('/')

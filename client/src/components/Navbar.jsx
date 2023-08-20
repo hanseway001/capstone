@@ -67,8 +67,8 @@ const Navbar = () => {
 
              <LogoutButton setLoginModalOpen={setLoginModalOpen}/>
         </div>
-        <nav className='navbar'>
-        </nav>
+        {/* <nav className='navbar'> */}
+        {/* </nav> */}
       </header>
     )
 }

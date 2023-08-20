@@ -19,7 +19,7 @@ export default function CourseInfo() {
     //     //call 
 
     //     try {
-    //       const response = await axios.post('http://localhost:3001/api/searchCourseInfo', { field: username, searchValue: password },
+    //       const response = await axios.post('http://localhost:3001/api/removeCourse', { field: username, searchValue: password },
     //         {
     //           headers: {
     //             'Content-Type': 'application/x-www-form-urlencoded',
@@ -49,7 +49,6 @@ export default function CourseInfo() {
                 } else {
                     throw new Error('Something went wrong on api server!');
                 }
-                // res.json()
             })
             .then(response => {
                 setServerData(response.course)
@@ -59,7 +58,6 @@ export default function CourseInfo() {
                 console.error(error);
             });
         fetchData()
-        // (data) => setData(data.message));
     }, [])
 
     return (
@@ -67,7 +65,7 @@ export default function CourseInfo() {
 
             <div className="regCourseContent">
                 <h1>Registered Course Info</h1>
-       
+
                 <TableContainer>
                     <Table>
                         <TableHead>
@@ -92,7 +90,7 @@ export default function CourseInfo() {
                                     <TableCell>{item.maximum_capacity}</TableCell>
                                     <TableCell>{item.credit_hour}</TableCell>
                                     <TableCell>{item.tuition_cost}</TableCell>
-                                    <TableCell><button>Remove</button></TableCell>
+                                    <TableCell><button className="whiteButton">Remove</button></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

@@ -58,8 +58,8 @@ export default function StudentInfo() {
       <div className="content">
       <h1>Student Info</h1>
       <div>
-        <TableContainer component={Paper}>
-          <Table>
+        <TableContainer >
+          <Table component={Paper}>
             <TableHead>
               <TableRow>
                 <TableCell>User Name</TableCell>

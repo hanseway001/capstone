@@ -35,7 +35,7 @@ body {
 }
 header {
   width: 100vw;
-  height: 250px;
+  height: 160px;
   padding-top: 10px;
   background-color: #212328;
   position:fixed;
@@ -249,8 +249,8 @@ a:hover {
   background-color: #2C2F36;
 }
 .HPnavbarLinkContainer {
-  margin-top: 10px;
-  padding: 20px 10px;
+  /* margin-top: 10px; */
+  padding: 10px 10px;
   border-bottom: #2C2F36 solid 3px;
   /* display: flex;
   align-items: flex-start; */
@@ -278,7 +278,7 @@ a:hover {
   margin: 180px 0 0 0;
   padding: 50px;
   width: 1450px;
-  height: 500px;
+  height: 580px;
   overflow-x: hidden; 
   border-radius: 30px;
   background-color: #ffffff;
@@ -290,12 +290,13 @@ a:hover {
 }
 
 .courseMain {
-  /* width: 100; */
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
+  /* padding: 10%; */
 }
 
 .CourseUnit {
